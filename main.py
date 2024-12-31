@@ -1,6 +1,12 @@
 import art
+import os
+import platform
 
-print(art.logo)
+def clear_screen():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def add(n1, n2):
     return n1 + n2
@@ -22,16 +28,8 @@ operations = {
     "/": divide,
 }
 
-import os
-import platform
-
-def clear_screen():
-    if platform.system() == "Windows":
-        os.system("cls")
-    else:
-        os.system("clear")
-
 def calculation():
+    print(art.logo)
     num1 = float(input("What is the first number?: "))
     is_accumulated = True
     while is_accumulated:
